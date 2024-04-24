@@ -1,0 +1,48 @@
+{
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"EditorConfig.EditorConfig",
+				"GitHub.vscode-github-actions",
+				"GitHub.vscode-pull-request-github",
+				"Gruntfuggly.todo-tree",
+				"dart-code.dart-code",
+				"dart-code.flutter",
+				"exiasr.hadolint",
+				"mhutchie.git-graph",
+				"redhat.vscode-yaml",
+				"streetsidesoftware.code-spell-checker",
+				"toroxx.vscode-avdmanager",
+				"waderyan.gitblame"
+			],
+			"settings": {
+				"emulator.emulatorPath": "/opt/android-sdk-linux/emulator"
+			}
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"configureZshAsDefaultShell": true
+		},
+		"ghcr.io/dhoeric/features/hadolint:1": {}
+	},
+	"runArgs": [
+		"--add-host=host.docker.internal:host-gateway",
+		"--device=/dev/kvm"
+	],
+	"name": "Dev environment (linux)",
+	"portsAttributes": {
+		"5554": {
+			"label": "Emulator port",
+			"onAutoForward": "notify"
+		},
+		"5555": {
+			"label": "ADB connection port",
+			"onAutoForward": "notify"
+		}
+	},
+	"onCreateCommand": "flutter pub get"
+}
