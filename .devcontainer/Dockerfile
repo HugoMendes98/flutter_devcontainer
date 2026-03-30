@@ -1,5 +1,5 @@
 # https://github.com/instrumentisto/flutter-docker-image
-FROM instrumentisto/flutter:3.35
+FROM instrumentisto/flutter:3.41
 
 # Add some utilities
 RUN apt-get update && \
